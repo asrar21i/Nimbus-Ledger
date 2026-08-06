@@ -1,0 +1,3 @@
+username,is_admin,days_old,timestamp
+bob,False,120,2026-08-06 15:55:45
+carol,True,45,2026-08-06 15:55:45

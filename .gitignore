@@ -1,0 +1,6 @@
+01-iso27001-nist-csf/scripts/*.csv
+01-iso27001-nist-csf/scripts/*.txt
+*.pyc
+__pycache__/
+!01-iso27001-nist-csf/evidence/sample_asset_inventory_output.csv
+!01-iso27001-nist-csf/evidence/sample_flagged_users_output.csv

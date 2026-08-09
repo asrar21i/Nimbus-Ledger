@@ -52,10 +52,14 @@ test_pass_when_only_internal_access if {
                 "type": "aws_security_group",
                 "change": {
                     "after": {
-                        "ingress": [
+                       "ingress": [
                             {
-                                "from_port": 443,
-                                "cidr_blocks": ["10.0.0.0/16"]
+                                "from_port":443,
+                                "cidr_blocks":["10.0.0.0/16"]
+                            },
+                            {
+                                "from_port":22,
+                                "cidr_blocks":["10.0.0.0/16"]
                             }
                         ]
                     }

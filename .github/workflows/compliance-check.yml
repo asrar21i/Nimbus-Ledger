@@ -7,9 +7,25 @@ on:
 jobs:
   policy-check:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        working-directory: 01-iso27001-nist-csf/terraform
+        run: terraform init -backend=false
+
+      - name: Terraform Plan
+        working-directory: 01-iso27001-nist-csf/terraform
+        run: terraform plan -refresh=false -out=tfplan
+
+      - name: Convert Terraform plan to JSON
+        working-directory: 01-iso27001-nist-csf/terraform
+        run: terraform show -json tfplan > ../evidence/terraform_plan.json
 
       - name: Install conftest
         run: |
@@ -18,4 +34,4 @@ jobs:
           sudo mv conftest /usr/local/bin
 
       - name: Run policy checks
-        run: conftest test 01-iso27001-nist-csf/evidence/sample_plan.json -p 01-iso27001-nist-csf/policy/ --all-namespaces
+        run: conftest test 01-iso27001-nist-csf/evidence/terraform_plan.json -p 01-iso27001-nist-csf/policy/ --all-namespaces

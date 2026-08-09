@@ -36,6 +36,10 @@ jobs:
 
       - name: Terraform Init & Plan
         working-directory: 01-iso27001-nist-csf/terraform
+        env:
+          AWS_ACCESS_KEY_ID: mock_access_key
+          AWS_SECRET_ACCESS_KEY: mock_secret_key
+          AWS_REGION: us-east-1
         run: |
           terraform init
           terraform plan -out=tfplan.binary

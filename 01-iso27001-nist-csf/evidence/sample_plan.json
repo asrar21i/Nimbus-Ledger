@@ -49,6 +49,7 @@
       "type": "aws_db_instance",
       "change": {
         "after": {
+          "storage_encrypted": true,
           "tags": {
             "Owner": "carol",
             "DataClassification": "Confidential"
@@ -64,7 +65,7 @@
           "ingress": [
             {
               "from_port": 22,
-              "cidr_blocks": ["0.0.0.0/0"]
+              "cidr_blocks": ["10.0.0.0/16"]
             },
             {
               "from_port": 443,
@@ -79,7 +80,7 @@
       "type": "aws_iam_policy",
       "change": {
         "after": {
-          "policy": "{\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"iam:*\",\"Resource\":\"*\"}]}"
+          "policy": "{\"Statement\":[{\"Effect\":\"Allow\",\"Action\":\"iam:GetPolicy\",\"Resource\":\"*\"}]}"
         }
       }
     }

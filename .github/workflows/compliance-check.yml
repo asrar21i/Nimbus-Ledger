@@ -49,4 +49,5 @@ jobs:
       - name: Evaluate Policy Compliance against Terraform Plan
         run: |
           conftest test 01-iso27001-nist-csf/evidence/sample_plan.json \
-            --policy 01-iso27001-nist-csf/policy
+            --policy 01-iso27001-nist-csf/policy \
+            --all-namespaces

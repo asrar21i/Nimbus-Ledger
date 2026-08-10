@@ -18,7 +18,7 @@ variable "environment" {
 
 variable "db_password" {
   type        = string
-  description = "Master password for RDS instance"
+  description = "Master password for RDS instance (supply via TF_VAR_db_password or CI secret, never commit a default)"
   sensitive   = true
-  default     = "SuperSecretPassword123!"
+  
 }

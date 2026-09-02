@@ -75,11 +75,9 @@ This project demonstrates how a GRC practitioner can:
 │   ├── asset_inventory.py
 │   └── IAM_access_review.py
 │
-├── .github/
-│   └── workflows/
-│       └── compliance-check.yml
-│
-└── README.md
+└── .github/
+    └── workflows/
+        └── compliance-check.yml
 ```
 
 ---

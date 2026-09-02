@@ -1,0 +1,17 @@
+# Python
+01-iso27001-nist-csf/scripts/*.csv
+01-iso27001-nist-csf/scripts/*.txt
+*.pyc
+__pycache__/
+
+# Keep approved sample evidence
+!01-iso27001-nist-csf/evidence/sample_asset_inventory_output.csv
+!01-iso27001-nist-csf/evidence/sample_flagged_users_output.csv
+
+# Terraform generated files
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# Generated Terraform plan JSON
+01-iso27001-nist-csf/terraform/plan.json
